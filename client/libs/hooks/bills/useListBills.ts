@@ -42,10 +42,10 @@ function useListBills() {
     e.preventDefault();
 
     if (search === '') {
-      setInputs({ ...inputs, search: '' });
+      await setInputs({ ...inputs, search: '' });
       await refetch();
     } else {
-      setInputs({ ...inputs, search });
+      await setInputs({ ...inputs, search });
       await refetch();
     }
   };
@@ -57,12 +57,12 @@ function useListBills() {
   };
 
   const onUserList = async (user_id: string) => {
-    setInputs({ ...inputs, user_id });
+    await setInputs({ ...inputs, user_id });
     await refetch();
   };
 
   const onHallList = async (hall: string) => {
-    setInputs({ ...inputs, hall });
+    await setInputs({ ...inputs, hall });
     await refetch();
   };
 
