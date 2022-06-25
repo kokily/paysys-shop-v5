@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
-type UserContextState = [UserType | null, (user: UserType | null) => void];
+type UserContextState = [MeType | null, (user: MeType | null) => void];
 
 const UserContext = createContext<UserContextState | null>(null);
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function UserContextProvider({ children }: Props) {
-  const userState = useState<UserType | null>(null);
+  const userState = useState<MeType | null>(null);
 
   return (
     <UserContext.Provider value={userState}>{children}</UserContext.Provider>

@@ -20,6 +20,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="행사전표시스템 - v5.0" />
         <link rel="apple-touch-icon" href="/logo192.png" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
         <title>행사전표시스템 - v5.1</title>
       </Head>
       <GlobalStyle />
