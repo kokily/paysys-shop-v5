@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import BottomNavItem from './BottomNavItem';
 import { shadow } from '../../../styles';
 
-interface Props {}
-
 function BottomNav() {
   return (
     <Container>

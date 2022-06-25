@@ -40,6 +40,7 @@ function useLogin() {
   };
 
   useEffect(() => {
+    console.log(user);
     if (user) {
       router.push('/soldier');
     }
