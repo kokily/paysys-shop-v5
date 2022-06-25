@@ -110,7 +110,7 @@ export async function listBillsAPI(ctx: Context) {
     const billRepo = dataSource.getRepository(Bill);
     const query = billRepo
       .createQueryBuilder('bills')
-      .limit(20)
+      .limit(30)
       .orderBy('bills.created_at', 'DESC')
       .addOrderBy('bills.id', 'DESC');
 
