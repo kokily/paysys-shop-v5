@@ -4,7 +4,7 @@ import Native from '../components/home/Native';
 import useLoggedIn from '../libs/hooks/auth/useLoggedIn';
 import useNative from '../libs/hooks/home/useNative';
 
-const SoldierPage: NextPage = () => {
+const GeneralPage: NextPage = () => {
   const { user } = useLoggedIn();
   const { menu, native, onMenu } = useNative();
 
@@ -15,4 +15,4 @@ const SoldierPage: NextPage = () => {
   );
 };
 
-export default SoldierPage;
+export default GeneralPage;

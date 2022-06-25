@@ -18,14 +18,16 @@ function useLoggedIn(isAdmin?: boolean) {
   });
 
   useEffect(() => {
-    if (link === '' || link === 'register') {
-      if (user) {
-        router.push('/soldier');
-      }
-    } else {
-      if (!user) {
-        toast.warning('로그인 후 이용하세요');
-        router.push('/');
+    if (!isLoading) {
+      if (link === '' || link === 'register') {
+        if (user) {
+          router.push('/soldier');
+        }
+      } else {
+        if (!user) {
+          toast.warning('로그인 후 이용하세요');
+          router.push('/');
+        }
       }
     }
 
