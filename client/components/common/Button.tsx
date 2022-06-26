@@ -7,6 +7,10 @@ interface Props {
   cancel?: boolean;
   submit?: boolean;
   edit?: boolean;
+  remove?: boolean;
+  restore?: boolean;
+  menu?: boolean;
+  reserve?: boolean;
   fullSize?: boolean;
   onClick?: (e: any) => void;
 }
@@ -88,6 +92,54 @@ const Container = styled.button<Props>`
       & + & {
         margin-left: 0;
         margin-top: 1rem;
+      }
+    `}
+    ${(props) =>
+    props.remove &&
+    css`
+      border: 1px solid #fa5252;
+      background: white;
+      color: #fa5252;
+      &:hover {
+        background: #fa5252;
+        color: white;
+        ${shadow(1)};
+      }
+    `}
+  ${(props) =>
+    props.restore &&
+    css`
+      border: 1px solid #15aabf;
+      background: white;
+      color: #15aabf;
+      &:hover {
+        background: #15aabf;
+        color: white;
+        ${shadow(1)};
+      }
+    `}
+${(props) =>
+    props.menu &&
+    css`
+      border: 1px solid #4c6ef5;
+      background: white;
+      color: #4c6ef5;
+      &:hover {
+        background: #4c6ef5;
+        color: white;
+        ${shadow(1)};
+      }
+    `}
+${(props) =>
+    props.reserve &&
+    css`
+      border: 1px solid #fab005;
+      background: white;
+      color: #fab005;
+      &:hover {
+        background: #fab005;
+        color: white;
+        ${shadow(1)};
       }
     `}
 `;
