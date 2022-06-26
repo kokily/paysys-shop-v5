@@ -29,7 +29,7 @@ export async function readBillAPI(id: string) {
 
 // Add Bill API
 export async function addBillAPI(payload: AddBillPayload) {
-  const response = await client.post('/bills', payload);
+  const response = await client.post<BillType>('/bills', payload);
   return response.data;
 }
 

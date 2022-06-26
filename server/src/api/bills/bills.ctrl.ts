@@ -89,7 +89,7 @@ export async function addBillAPI(ctx: Context) {
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
 
-    ctx.status = 200;
+    ctx.body = bill;
   } catch (err: any) {
     ctx.throw(500, err);
   }
