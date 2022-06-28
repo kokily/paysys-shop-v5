@@ -5,8 +5,7 @@ import type {
   MouseEvent,
   SetStateAction,
 } from 'react';
-import React, { useEffect } from 'react';
-import useLocalStorage from 'use-local-storage';
+import React from 'react';
 import styled from 'styled-components';
 import { media } from '../../../styles';
 import Search from '../../common/search/Search';
@@ -35,12 +34,6 @@ function ListFronts({
   onDetailBill,
   setTarget,
 }: Props) {
-  const [scrollY] = useLocalStorage('bills_list', 0);
-
-  useEffect(() => {
-    if (scrollY !== 0) window.scrollTo(0, Number(scrollY));
-  }, []);
-
   return (
     <Container>
       <h2>프런트 전표 현황</h2>

@@ -1,12 +1,15 @@
 import type { ChangeEvent, KeyboardEvent, MouseEvent } from 'react';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useInfiniteQuery } from 'react-query';
+import { useInfiniteQuery, useQueryClient } from 'react-query';
 import { listBillsAPI } from '../../api/bills';
 import useObserver from '../common/useObserver';
+import useLocalStorage from 'use-local-storage';
 
 function useListBills() {
   const router = useRouter();
+  const queryClient = useQueryClient();
+  const [scrollY, setScrollY] = useLocalStorage('listBills', 0);
   const [inputs, setInputs] = useState({
     search: '',
     hall: '',
@@ -21,7 +24,6 @@ function useListBills() {
       getNextPageParam: (data) =>
         data && data.length === 30 ? data[data.length - 1].id : undefined,
       enabled: true,
-      staleTime: 100,
     }
   );
 
@@ -42,9 +44,11 @@ function useListBills() {
     e.preventDefault();
 
     if (search === '') {
+      await queryClient.clear();
       await setInputs({ ...inputs, search: '' });
       await refetch();
     } else {
+      await queryClient.clear();
       await setInputs({ ...inputs, search });
       await refetch();
     }
@@ -57,16 +61,19 @@ function useListBills() {
   };
 
   const onUserList = async (user_id: string) => {
+    await queryClient.clear();
     await setInputs({ ...inputs, user_id });
     await refetch();
   };
 
   const onHallList = async (hall: string) => {
+    await queryClient.clear();
     await setInputs({ ...inputs, hall });
     await refetch();
   };
 
   const onDetailBill = (id: string) => {
+    setScrollY(window.scrollY);
     router.push(`/fronts/${id}`);
   };
 
@@ -75,6 +82,10 @@ function useListBills() {
   };
 
   const { setTarget } = useObserver({ onIntersect });
+
+  useEffect(() => {
+    if (scrollY !== 0) window.scrollTo(0, Number(scrollY));
+  }, []);
 
   return {
     bills,
