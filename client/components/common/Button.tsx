@@ -11,6 +11,8 @@ interface Props {
   restore?: boolean;
   menu?: boolean;
   reserve?: boolean;
+  employee?: boolean;
+  admin?: boolean;
   fullSize?: boolean;
   onClick?: (e: any) => void;
 }
@@ -138,6 +140,30 @@ ${(props) =>
       color: #fab005;
       &:hover {
         background: #fab005;
+        color: white;
+        ${shadow(1)};
+      }
+    `}
+${(props) =>
+    props.employee &&
+    css`
+      border: 1px solid #fab005;
+      background: white;
+      color: #fab005;
+      &:hover {
+        background: #fab005;
+        color: white;
+        ${shadow(1)};
+      }
+    `}
+${(props) =>
+    props.admin &&
+    css`
+      border: 1px solid #4c6ef5;
+      background: white;
+      color: #4c6ef5;
+      &:hover {
+        background: #4c6ef5;
         color: white;
         ${shadow(1)};
       }
