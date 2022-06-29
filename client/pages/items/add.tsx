@@ -5,7 +5,7 @@ import useLoggedIn from '../../libs/hooks/auth/useLoggedIn';
 import useAddItem from '../../libs/hooks/items/useAddItem';
 
 const AddItemPage: NextPage = () => {
-  const { user } = useLoggedIn();
+  const { user } = useLoggedIn(true);
   const {
     name,
     divide,

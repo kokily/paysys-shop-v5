@@ -23,7 +23,7 @@ export async function listWeddingsAPI(ctx: Context) {
     const weddingRepo = dataSource.getRepository(Wedding);
     const query = weddingRepo
       .createQueryBuilder('weddings')
-      .limit(20)
+      .limit(40)
       .orderBy('weddings.created_at', 'DESC')
       .addOrderBy('weddings.id', 'DESC');
 

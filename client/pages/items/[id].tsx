@@ -5,7 +5,7 @@ import useLoggedIn from '../../libs/hooks/auth/useLoggedIn';
 import useReadItem from '../../libs/hooks/items/useReadItem';
 
 const ReadItemPage: NextPage = () => {
-  const { user } = useLoggedIn();
+  const { user } = useLoggedIn(true);
   const { item, onBack, onEdit, modal, onModalOpen, onCancel, onConfirm } =
     useReadItem();
 
