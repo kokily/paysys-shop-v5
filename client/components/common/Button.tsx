@@ -91,9 +91,10 @@ const Container = styled.button<Props>`
     props.fullSize &&
     css`
       width: 100%;
+      margin-bottom: 1rem;
+
       & + & {
         margin-left: 0;
-        margin-top: 1rem;
       }
     `}
     ${(props) =>

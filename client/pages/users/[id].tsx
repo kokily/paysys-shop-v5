@@ -5,7 +5,7 @@ import useLoggedIn from '../../libs/hooks/auth/useLoggedIn';
 import useReadUser from '../../libs/hooks/users/useReadUser';
 
 const ReadUserPage: NextPage = () => {
-  const { user } = useLoggedIn();
+  const { user } = useLoggedIn(true);
   const {
     data,
     onUsersList,

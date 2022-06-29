@@ -50,12 +50,10 @@ export async function addItemAPI(ctx: Context) {
 export async function listItemsAPI(ctx: Context) {
   type QueryType = {
     name?: string;
-    divide?: string;
-    native?: string;
     cursor?: string;
   };
 
-  const { name, divide, native, cursor }: QueryType = ctx.query;
+  const { name, cursor }: QueryType = ctx.query;
 
   try {
     const itemRepo = dataSource.getRepository(Item);
@@ -67,18 +65,6 @@ export async function listItemsAPI(ctx: Context) {
     if (name) {
       query.andWhere('items.name like :name', {
         name: `%${name}%`,
-      });
-    }
-
-    if (divide) {
-      query.andWhere('items.divide like :divide', {
-        divide: `%${divide}%`,
-      });
-    }
-
-    if (native) {
-      query.andWhere('items.native like :native', {
-        native: `%${native}%`,
       });
     }
 

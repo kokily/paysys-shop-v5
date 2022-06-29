@@ -5,7 +5,7 @@ import useListUsers from '../../libs/hooks/users/useListUsers';
 import ListUsers from '../../components/users/list/ListUsers';
 
 const ListUsersPage: NextPage = () => {
-  const { user } = useLoggedIn();
+  const { user } = useLoggedIn(true);
   const {
     users,
     username,
