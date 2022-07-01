@@ -1,12 +1,14 @@
+import type { Dispatch, SetStateAction } from 'react';
 import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
   weddings: WeddingType[];
   onDetailWedding: (id: string) => void;
+  setTarget: Dispatch<SetStateAction<HTMLElement | null | undefined>>;
 }
 
-function WeddingsTable({ weddings, onDetailWedding }: Props) {
+function WeddingsTable({ weddings, onDetailWedding, setTarget }: Props) {
   return (
     <Container>
       <Table>
@@ -39,6 +41,8 @@ function WeddingsTable({ weddings, onDetailWedding }: Props) {
           )}
         </tbody>
       </Table>
+
+      <div ref={setTarget} />
     </Container>
   );
 }

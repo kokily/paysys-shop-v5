@@ -40,15 +40,19 @@ function ListWeddings({
         onKeyPress={onKeyPress}
       />
 
-      <WeddingsTable weddings={weddings} onDetailWedding={onDetailWedding} />
-
-      <div ref={setTarget} />
+      <WeddingsTable
+        weddings={weddings}
+        onDetailWedding={onDetailWedding}
+        setTarget={setTarget}
+      />
     </Container>
   );
 }
 
 // Styles
 const Container = styled.div`
+  margin-bottom: 4.5rem;
+
   h2 {
     text-align: center;
   }
