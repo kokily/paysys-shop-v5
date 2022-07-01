@@ -40,6 +40,8 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "dev": "NODE_ENV=development ts-node-dev --respawn ./src/server.ts"
+    "dev": "NODE_ENV=development ts-node-dev --respawn ./src/server.ts",
+    "build": "npx tsc",
+    "start": "NODE_ENV=production node dist/server.js"
   }
 }
