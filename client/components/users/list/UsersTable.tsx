@@ -46,12 +46,14 @@ function UsersTable({ users, onDetailUser }: Props) {
 
 // Styles
 const Container = styled.div`
+  padding: 0.4rem;
+  ${shadow(1)}
+
   table {
     margin-left: 5rem;
     margin-right: 5rem;
     border-radius: 0.8rem;
     overflow: hidden;
-    ${shadow(1)}
     ${media.medium} {
       margin-left: 0;
       margin-right: 0;
