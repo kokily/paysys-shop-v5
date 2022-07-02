@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { stringAccounting } from '../../../libs/utils';
+import { media } from '../../../styles';
 import Meal from './common/Meal';
 import Prepayment from './common/Prepayment';
 import Present from './common/Present';
@@ -143,6 +144,10 @@ const Container = styled.table`
   }
   h3 {
     margin: 0.96rem;
+  }
+
+  ${media.medium} {
+    margin-top: 1.5rem;
   }
 `;
 
