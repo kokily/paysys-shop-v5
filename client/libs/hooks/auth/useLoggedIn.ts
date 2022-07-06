@@ -10,7 +10,7 @@ function useLoggedIn(isAdmin?: boolean) {
   const [user, setUser] = useUserState();
   const [link] = useState(router.pathname.substring(1));
 
-  const { isLoading } = useQuery('user', () => checkAPI(), {
+  useQuery('user', () => checkAPI(), {
     onSuccess: (data) => {
       setUser(data);
     },
@@ -20,24 +20,22 @@ function useLoggedIn(isAdmin?: boolean) {
   });
 
   useEffect(() => {
-    if (!isLoading) {
-      if (user) {
-        if (link === '' || link === 'register') {
+    if (user) {
+      if (link === '' || link === 'register') {
+        router.push('/soldier');
+      }
+
+      if (isAdmin) {
+        if (!user.admin) {
+          toast.error('관리자 이용 메뉴입니다');
           router.push('/soldier');
         }
-
-        if (isAdmin) {
-          if (!user.admin) {
-            toast.error('관리자 이용 메뉴입니다');
-            router.push('/soldier');
-          }
-        }
-      } else {
-        toast.error('로그인 후 이용하세요');
-        router.push('/');
       }
+    } else {
+      toast.error('로그인 후 이용하세요');
+      router.push('/');
     }
-  }, [isLoading, user]);
+  }, [user, link]);
 
   return {
     user,
