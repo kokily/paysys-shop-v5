@@ -19,6 +19,7 @@ function useLoggedIn(isAdmin?: boolean) {
       }
 
       if (isAdmin) {
+        console.log('여기');
         if (!data.admin) {
           toast.error('관리자 이용 메뉴입니다!');
           router.push('/soldier');
