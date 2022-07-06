@@ -13,29 +13,26 @@ function useLoggedIn(isAdmin?: boolean) {
   useQuery('user', () => checkAPI(), {
     onSuccess: (data) => {
       setUser(data);
-    },
-    onError: () => setUser(null),
-    retry: 0,
-    enabled: true,
-  });
 
-  useEffect(() => {
-    if (user) {
       if (link === '' || link === 'register') {
         router.push('/soldier');
       }
 
       if (isAdmin) {
-        if (!user.admin) {
-          toast.error('관리자 이용 메뉴입니다');
+        if (!data.admin) {
+          toast.error('관리자 이용 메뉴입니다!');
           router.push('/soldier');
         }
       }
-    } else {
-      toast.error('로그인 후 이용하세요');
+    },
+    onError: (err: any) => {
+      setUser(null);
+      toast.error(err);
       router.push('/');
-    }
-  }, [user, link]);
+    },
+    retry: 0,
+    enabled: true,
+  });
 
   return {
     user,
