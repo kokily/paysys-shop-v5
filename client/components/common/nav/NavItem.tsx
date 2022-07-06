@@ -12,7 +12,7 @@ function NavItem({ children, href, onClick }: Props) {
   const jsx = <ItemBox onClick={onClick}>{children}</ItemBox>;
 
   return href ? (
-    <Link href={href} passHref={true}>
+    <Link href={href}>
       <Container style={{ display: 'block' }}>{jsx}</Container>
     </Link>
   ) : (
