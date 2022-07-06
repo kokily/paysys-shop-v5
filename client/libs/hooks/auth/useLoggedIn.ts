@@ -30,7 +30,6 @@ function useLoggedIn(isAdmin?: boolean) {
       toast.error(err);
       router.push('/');
     },
-    retry: 0,
     enabled: true,
   });
 
