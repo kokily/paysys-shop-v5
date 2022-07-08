@@ -10,6 +10,6 @@ const expense = new Router();
 
 expense.post('/', authorizedAdmin, addExpenseAPI);
 expense.delete('/:id', authorizedAdmin, removeExpenseAPI);
-expense.put('/:id', authorizedAdmin, updateExpenseAPI);
+expense.put('/', authorizedAdmin, updateExpenseAPI);
 
 export default expense;
