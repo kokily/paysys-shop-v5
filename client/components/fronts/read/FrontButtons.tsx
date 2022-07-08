@@ -69,6 +69,7 @@ const Container = styled.div`
 const ButtonBox = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 
 export default FrontButtons;

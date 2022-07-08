@@ -76,6 +76,10 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Contents = styled.div``;
+const Contents = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
 export default ReadFront;

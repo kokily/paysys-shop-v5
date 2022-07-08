@@ -49,11 +49,13 @@ export async function addItemAPI(ctx: Context) {
 // List Items API
 export async function listItemsAPI(ctx: Context) {
   type QueryType = {
+    divide?: string;
+    native?: string;
     name?: string;
     cursor?: string;
   };
 
-  const { name, cursor }: QueryType = ctx.query;
+  const { divide, native, name, cursor }: QueryType = ctx.query;
 
   try {
     const itemRepo = dataSource.getRepository(Item);
@@ -61,6 +63,14 @@ export async function listItemsAPI(ctx: Context) {
       .createQueryBuilder('items')
       .limit(30)
       .orderBy('items.num', 'DESC');
+
+    if (divide) {
+      query.andWhere('items.divide = :divide', { divide });
+    }
+
+    if (native) {
+      query.andWhere('items.native = :native', { native });
+    }
 
     if (name) {
       query.andWhere('items.name like :name', {
