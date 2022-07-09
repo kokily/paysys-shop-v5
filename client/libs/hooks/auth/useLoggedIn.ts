@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
@@ -19,7 +19,6 @@ function useLoggedIn(isAdmin?: boolean) {
       }
 
       if (isAdmin) {
-        console.log('여기');
         if (!data.admin) {
           toast.error('관리자 이용 메뉴입니다!');
           router.push('/soldier');
