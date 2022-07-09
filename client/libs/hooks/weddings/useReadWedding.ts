@@ -2,7 +2,8 @@ import { useRouter } from 'next/router';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { toast } from 'react-toastify';
 import { removeExpenseAPI } from '../../api/expense';
-import { readWeddingAPI, removeSignAPI } from '../../api/weddings';
+import { removeSignAPI } from '../../api/sign';
+import { readWeddingAPI } from '../../api/weddings';
 import useModal from '../common/useModal';
 
 function useReadWedding() {

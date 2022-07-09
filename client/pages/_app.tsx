@@ -7,6 +7,9 @@ import { ToastContainer } from 'react-toastify';
 import { UserContextProvider } from '../libs/context/UserContext';
 import GlobalStyle from '../styles';
 import 'react-toastify/dist/ReactToastify.css';
+import { ImageContextProvider } from '../libs/context/ImageContext';
+import { HusbandContextProvider } from '../libs/context/HusbandContext';
+import { BrideContextProvider } from '../libs/context/BrideContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
@@ -32,12 +35,18 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <GlobalStyle />
       <UserContextProvider>
-        <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <Component {...pageProps} />
-          </Hydrate>
-          <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
+        <ImageContextProvider>
+          <HusbandContextProvider>
+            <BrideContextProvider>
+              <QueryClientProvider client={queryClient}>
+                <Hydrate state={pageProps.dehydratedState}>
+                  <Component {...pageProps} />
+                </Hydrate>
+                <ReactQueryDevtools initialIsOpen={false} />
+              </QueryClientProvider>
+            </BrideContextProvider>
+          </HusbandContextProvider>
+        </ImageContextProvider>
       </UserContextProvider>
       <ToastContainer draggable={false} position="bottom-center" />
     </>

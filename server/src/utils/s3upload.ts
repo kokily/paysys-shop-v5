@@ -4,8 +4,8 @@ import fs from 'fs';
 import moment from 'moment';
 
 export type FileType = {
-  name: string;
-  path: string;
+  newFilename: string;
+  filepath: string;
   type: string;
 };
 
@@ -34,11 +34,12 @@ const s3 = new aws.S3({
 });
 
 const uploadImage = async (file: FileType): Promise<S3ReturnType> => {
+  console.log(file.newFilename);
   return new Promise((resolve, reject) => {
     const Params: ParamsType = {
       Bucket: 'image.paysys.kr',
-      Body: fs.createReadStream(file.path),
-      Key: `${moment().format('YYMMDD_HHmmss')}_${file.name.trim()}`,
+      Body: fs.createReadStream(file.filepath),
+      Key: `${moment().format('YYMMDD_HHmmss')}_${file.newFilename.trim()}`,
       ContentType: file.type,
     };
 

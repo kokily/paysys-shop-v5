@@ -28,6 +28,14 @@ interface Props {
   onModalOpen: () => void;
   onCancel: () => void;
   onConfirm: () => void;
+  husband: boolean | null;
+  onConfirmHusband: () => void;
+  onCancelHusband: () => void;
+  setVisibleHusband: () => void;
+  bride: boolean | null;
+  onConfirmBride: () => void;
+  onCancelBride: () => void;
+  setVisibleBride: () => void;
 }
 
 function ReadWedding({
@@ -39,12 +47,31 @@ function ReadWedding({
   onModalOpen,
   onCancel,
   onConfirm,
+  husband,
+  onConfirmHusband,
+  onCancelHusband,
+  setVisibleHusband,
+  bride,
+  onConfirmBride,
+  onCancelBride,
+  setVisibleBride,
 }: Props) {
   return (
     <Container>
       {wedding && (
         <>
-          <WeddingPane wedding={wedding.wedding} />
+          <WeddingPane
+            wedding={wedding.wedding}
+            onRemoveSign={onRemoveSign}
+            husband={husband}
+            onConfirmHusband={onConfirmHusband}
+            onCancelHusband={onCancelHusband}
+            setVisibleHusband={setVisibleHusband}
+            bride={bride}
+            onConfirmBride={onConfirmBride}
+            onCancelBride={onCancelBride}
+            setVisibleBride={setVisibleBride}
+          />
 
           <Contents>
             <ReadWeddingFirst

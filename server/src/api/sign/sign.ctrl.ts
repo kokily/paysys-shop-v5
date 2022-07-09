@@ -39,17 +39,7 @@ export async function addSignAPI(ctx: Context) {
 
 // Remove Sign API
 export async function removeSignAPI(ctx: Context) {
-  type RequestType = {
-    id: string;
-  };
-
-  const schema = Joi.object().keys({
-    id: Joi.string().required(),
-  });
-
-  if (!validateBody(ctx, schema)) return;
-
-  const { id }: RequestType = ctx.request.body;
+  const { id }: { id: string } = ctx.params;
 
   try {
     const weddingRepo = dataSource.getRepository(Wedding);

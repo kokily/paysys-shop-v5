@@ -28,21 +28,3 @@ export async function readWeddingAPI(id: string) {
   }>(`/weddings/${id}`);
   return response.data;
 }
-
-// Add Sign API
-export type AddSignPayload = {
-  wedding_id: string;
-  sex: string;
-  image: string;
-};
-
-export async function addSignAPI(payload: AddSignPayload) {
-  const response = await client.post('/sign', payload);
-  return response.data;
-}
-
-// Remove Sign API
-export async function removeSignAPI(id: string) {
-  const response = await client.patch('/sign', { id });
-  return response.data;
-}
