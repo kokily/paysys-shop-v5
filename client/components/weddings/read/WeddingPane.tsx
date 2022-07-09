@@ -33,9 +33,13 @@ function WeddingPane({
       <Title>웨딩 정산 내역</Title>
       <Name>
         신랑님:{' '}
-        <strong onClick={setVisibleHusband}>{wedding.husband_name}</strong>{' '}
+        <strong className="select" onClick={setVisibleHusband}>
+          {wedding.husband_name}
+        </strong>{' '}
         <strong style={{ color: 'pink' }}>♡</strong> 신부님:{' '}
-        <strong onClick={setVisibleBride}>{wedding.bride_name}</strong>
+        <strong className="select" onClick={setVisibleBride}>
+          {wedding.bride_name}
+        </strong>
       </Name>
 
       {(wedding.husband_image || wedding.bride_image) && (
@@ -87,8 +91,14 @@ const Title = styled.h2`
 
 const Name = styled.h3`
   text-align: center;
+
   strong {
     color: #1098ad;
+    transition: 1.2s color;
+  }
+  .select:hover {
+    cursor: pointer;
+    color: #36bcd1;
   }
 `;
 

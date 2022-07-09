@@ -2,22 +2,17 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useImageState } from '../../libs/context/ImageContext';
 
-// Styles
-const Canvas = styled.canvas`
-  background: white;
-`;
+type Coordinate = {
+  x: number;
+  y: number;
+};
 
 interface Props {
   width: number;
   height: number;
 }
 
-interface Coordinate {
-  x: number;
-  y: number;
-}
-
-const SignCanvas: React.FC<Props> = ({ width, height }) => {
+function SignCanvas({ width, height }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [, setCurrentImg] = useImageState();
   const [mousePos, setMousePos] = useState<Coordinate | undefined>(undefined);
@@ -52,7 +47,6 @@ const SignCanvas: React.FC<Props> = ({ width, height }) => {
       context.moveTo(originalMousePosition.x, originalMousePosition.y);
       context.lineTo(newMousePosition.x, newMousePosition.y);
       context.closePath();
-
       context.stroke();
     }
   };
@@ -164,6 +158,11 @@ const SignCanvas: React.FC<Props> = ({ width, height }) => {
   ]);
 
   return <Canvas ref={canvasRef} width={width} height={height} />;
-};
+}
+
+// Styles
+const Canvas = styled.canvas`
+  background: white;
+`;
 
 export default SignCanvas;
