@@ -53,6 +53,11 @@ function ReadWeddingFirst({
 // Styles
 const Container = styled.table`
   font-size: 0.95rem;
+  height: 100%;
+
+  @media print {
+    margin-top: 25.78px;
+  }
 
   th,
   td {

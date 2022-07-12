@@ -82,7 +82,7 @@ function ReadWeddingSecond({
         <Reserve reserve={reserve} hanbok={hanbok} />
         <Prepayment prepayment={prepayment} />
 
-        <tr style={{ height: '176px' }}>
+        <tr style={{ height: '165px' }}>
           <td colSpan={4} rowSpan={9} style={{ textAlign: 'center' }}>
             <h3 style={{ color: 'silver' }}>
               웨딩 총 비용: {stringAccounting(allCost)}원
@@ -102,6 +102,8 @@ function ReadWeddingSecond({
 // Styles
 const Container = styled.table`
   font-size: 0.95rem;
+  height: 100%;
+
   tr {
     &:hover {
       background: rgba(165, 102, 255, 0.2);

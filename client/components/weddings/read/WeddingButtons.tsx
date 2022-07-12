@@ -28,6 +28,10 @@ function WeddingButtons({ onBack, onEdit, onModalClick }: Props) {
 const Container = styled.div`
   margin-bottom: 1rem;
   display: block;
+
+  @media print {
+    display: none;
+  }
 `;
 
 export default WeddingButtons;

@@ -126,6 +126,10 @@ const Contents = styled.div`
 
   ${media.medium} {
     flex-direction: column;
+
+    @media print {
+      flex-direction: row;
+    }
   }
 `;
 

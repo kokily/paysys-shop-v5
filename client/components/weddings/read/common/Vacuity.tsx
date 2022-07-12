@@ -9,10 +9,9 @@ function Vacuity() {
           background: 'white',
           color: 'white',
           borderColor: 'white',
+          height: '25.78px',
         }}
-      >
-        Vacuity
-      </th>
+      ></th>
     </tr>
   );
 }

@@ -50,7 +50,7 @@ function WeddingPane({
         />
       )}
 
-      <h4>
+      <h4 style={{ margin: 0 }}>
         웨딩일시: {new Date(wedding.wedding_at).toLocaleDateString()}{' '}
         {wedding.event_at}
       </h4>
@@ -71,7 +71,7 @@ function WeddingPane({
 
       <hr style={{ width: '90%' }} />
 
-      <h3>웨딩 비용</h3>
+      <h3 className="subTitle">웨딩 비용</h3>
     </Container>
   );
 }
@@ -82,6 +82,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+
+  .subTitle {
+    @media print {
+      margin-bottom: -25.78px;
+    }
+  }
 `;
 
 const Title = styled.h2`

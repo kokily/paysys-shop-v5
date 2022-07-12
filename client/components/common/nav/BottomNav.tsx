@@ -22,6 +22,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Contents = styled.div`

@@ -87,6 +87,10 @@ const Container = styled.div`
   top: 0px;
   z-index: 20;
   ${shadow(1)}
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Layout = styled.div`
