@@ -6,6 +6,7 @@ import { media } from '../../styles';
 import CartTotal from './CartTotal';
 import CartInput from './CartInput';
 import Button from '../common/Button';
+import RemoveCart from './RemoveCart';
 
 const CartTop = dynamic(() => import('./CartTop'), { ssr: false });
 
@@ -74,6 +75,8 @@ function Cart({
           전체삭제
         </Button>
       </Form>
+
+      <RemoveCart visible={modal} onConfirm={onConfirm} onCancel={onCancel} />
     </Container>
   );
 }

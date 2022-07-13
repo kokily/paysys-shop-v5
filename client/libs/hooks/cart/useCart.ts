@@ -11,7 +11,8 @@ function useCart() {
   const router = useRouter();
   const { data: cart, refetch } = useQuery('cart', () => viewCartAPI(), {
     enabled: true,
-    staleTime: 100,
+    cacheTime: 0,
+    retry: 0,
   });
   const [inputs, setInputs] = useState({
     title: '',
@@ -50,8 +51,14 @@ function useCart() {
   const onRemoveOneCart = async (id: string, name: string) => {
     if (window.confirm(`${name} 품목을 삭제합니다.`)) {
       await removeOneCartMutate.mutateAsync(id);
-      queryClient.invalidateQueries('cart');
-      await refetch();
+      await queryClient.clear();
+      const data = await refetch();
+
+      if (!data) {
+        setInputs({ ...inputs, totalAmount: 0 });
+      } else {
+        CalAmount(data.data?.items || []);
+      }
       toast.success('품목 삭제');
     } else {
       return;
@@ -59,9 +66,14 @@ function useCart() {
   };
 
   const onRemoveCart = async () => {
-    await removeCartMutate.mutateAsync();
-    await refetch();
-    toast.success('카트 삭제');
+    try {
+      await removeCartMutate.mutateAsync();
+      await queryClient.clear();
+      setInputs({ ...inputs, totalAmount: 0 });
+      toast.success('카트 삭제');
+    } catch (err: any) {
+      toast.error(err);
+    }
   };
 
   const onModalClick = () => {
@@ -77,16 +89,20 @@ function useCart() {
     onRemoveCart();
   };
 
+  const CalAmount = (items: ItemType[]) => {
+    let total = 0;
+    let list = items;
+
+    for (let key in list) {
+      total += list[key].amount;
+    }
+
+    setInputs({ ...inputs, totalAmount: total });
+  };
+
   useEffect(() => {
     if (cart && cart.items && cart.items.length > 0) {
-      let total = 0;
-      let list = cart.items;
-
-      for (let key in list) {
-        total += list[key].amount;
-      }
-
-      setInputs({ ...inputs, totalAmount: total });
+      CalAmount(cart.items);
     }
   }, [cart]);
 
