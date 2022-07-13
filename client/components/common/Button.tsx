@@ -50,6 +50,10 @@ const Container = styled.button<Props>`
   }
   & + & {
     margin-left: 1rem;
+
+    ${(props) => props.fullSize && css`
+      margin-left: 0;
+    `}
   }
   ${(props) =>
     props.cancel &&

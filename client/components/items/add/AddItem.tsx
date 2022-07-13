@@ -7,6 +7,7 @@ import ItemInput from './ItemInput';
 import ItemSelect from './ItemSelect';
 
 interface Props {
+  edit?: boolean;
   name: string;
   divide: string;
   native: string;
@@ -19,6 +20,7 @@ interface Props {
 }
 
 function AddItem({
+  edit,
   name,
   divide,
   native,
@@ -86,7 +88,7 @@ function AddItem({
 
         <ButtonsBox>
           <Button submit fullSize onClick={onAddItem}>
-            등록하기
+            {edit ? '저장하기' : '등록하기'}
           </Button>
           <Button cancel fullSize onClick={onBack}>
             취소하기

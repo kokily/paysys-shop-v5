@@ -21,6 +21,7 @@ const UpdateItemPage: NextPage = () => {
   return (
     <PageTemplate user={user}>
       <AddItem
+        edit={true}
         name={name}
         divide={divide}
         native={native}
