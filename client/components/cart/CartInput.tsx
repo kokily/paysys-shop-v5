@@ -10,7 +10,7 @@ interface Props {
   small?: boolean;
 }
 
-function CartInput({ name, value, onChange, small }: Props) {
+function CartInput({ name, value, label, onChange, small }: Props) {
   return (
     <Container>
       <Input
@@ -22,7 +22,7 @@ function CartInput({ name, value, onChange, small }: Props) {
       />
       <Bar />
       <Label htmlFor={name}>
-        {name} {small && <small>필수</small>}
+        {label} {small && <small>필수</small>}
       </Label>
     </Container>
   );
