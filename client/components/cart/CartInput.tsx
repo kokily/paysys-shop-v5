@@ -21,7 +21,9 @@ function CartInput({ name, value, onChange, small }: Props) {
         required
       />
       <Bar />
-      <Label htmlFor={name}>행사명 {small && <small>필수</small>}</Label>
+      <Label htmlFor={name}>
+        {name} {small && <small>필수</small>}
+      </Label>
     </Container>
   );
 }
