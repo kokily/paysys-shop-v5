@@ -1,11 +1,6 @@
+import type { ChangeEvent, KeyboardEvent, MouseEvent } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import {
-  ChangeEvent,
-  KeyboardEvent,
-  MouseEvent,
-  useEffect,
-  useState,
-} from 'react';
 import { useMutation, useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import { addCartAPI } from '../../api/cart';

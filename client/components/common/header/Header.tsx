@@ -1,5 +1,4 @@
-import { MouseEvent, useEffect } from 'react';
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useEffect, useCallback, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';

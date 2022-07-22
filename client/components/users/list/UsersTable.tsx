@@ -44,10 +44,15 @@ function UsersTable({ users, onDetailUser }: Props) {
 
 // Styles
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 487px;
   padding: 0.4rem;
   ${shadow(1)}
 
   table {
+    width: 100%;
     margin-left: 5rem;
     margin-right: 5rem;
     border-radius: 0.8rem;

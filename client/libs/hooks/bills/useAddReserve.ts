@@ -1,4 +1,5 @@
-import { ChangeEvent, KeyboardEvent, MouseEvent, useState } from 'react';
+import type { ChangeEvent, KeyboardEvent, MouseEvent } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useMutation } from 'react-query';
 import { addReserveAPI } from '../../api/reserve';

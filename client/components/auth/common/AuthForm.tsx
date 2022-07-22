@@ -1,4 +1,5 @@
-import React, { KeyboardEvent, MouseEvent, ChangeEvent } from 'react';
+import type { KeyboardEvent, MouseEvent, ChangeEvent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import AuthButton from './AuthButton';
 import AuthInput from './AuthInput';
