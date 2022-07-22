@@ -13,7 +13,6 @@ function UsersTable({ users, onDetailUser }: Props) {
       <table>
         <thead>
           <Tr>
-            <Th>ID</Th>
             <Th>성명</Th>
             <Th>가입일</Th>
             <Th>관리자</Th>
@@ -27,7 +26,6 @@ function UsersTable({ users, onDetailUser }: Props) {
                 style={{ cursor: 'pointer' }}
                 onClick={() => onDetailUser(user.id)}
               >
-                <td>{user.id}</td>
                 <td>{user.username}</td>
                 <td>{new Date(user.created_at).toLocaleDateString()}</td>
                 <td>{user.admin ? '관리자' : '일반'}</td>
