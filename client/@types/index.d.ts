@@ -270,3 +270,10 @@ interface ReadWeddingType {
   reserve: ReserveType | null;
   prepayment: PrepaymentType | null;
 }
+
+interface AgreeType {
+  id: string;
+  name: string;
+  sign: string;
+  isAgree: boolean;
+}

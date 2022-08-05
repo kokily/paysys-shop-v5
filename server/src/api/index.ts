@@ -1,4 +1,5 @@
 import Router from 'koa-router';
+import agrees from './agrees';
 import auth from './auth';
 import bills from './bills';
 import cart from './cart';
@@ -13,6 +14,7 @@ import weddings from './weddings';
 
 const api = new Router();
 
+api.use('/agrees', agrees.routes());
 api.use('/auth', auth.routes());
 api.use('/bills', bills.routes());
 api.use('/cart', cart.routes());

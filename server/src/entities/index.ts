@@ -1,3 +1,4 @@
+import Agree from './Agree';
 import Bill from './Bill';
 import Cart from './Cart';
 import Item from './Item';
@@ -14,6 +15,7 @@ import Reserve from './weddings/Reserve';
 import Wedding from './weddings/Wedding';
 
 const entities = [
+  Agree,
   Bill,
   Cart,
   Item,
