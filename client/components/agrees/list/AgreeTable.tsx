@@ -1,7 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 
 interface Props {
   agrees: AgreeType[];
@@ -31,7 +30,7 @@ function AgreeTable({ agrees, onDetailAgree, setTarget }: Props) {
                 </Td>
                 <Td>{new Date(agree.created_at).toLocaleDateString()}</Td>
                 <Td>
-                  <Image width={100} height={60} src={agree.sign} />
+                  <img src={agree.sign} />
                 </Td>
               </tr>
             ))
@@ -92,6 +91,10 @@ const Td = styled.td`
     &:hover {
       color: #f03e3e;
     }
+  }
+  img {
+    width: 100px;
+    height: 60px;
   }
 `;
 

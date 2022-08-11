@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../../common/Button';
@@ -77,7 +76,7 @@ function ReadAgree({
             </p>
             <p className="name">
               작성자 : <span>{agree.name}</span>
-              <Image width={120} height={80} src={agree.sign} />
+              <img src={agree.sign} />
             </p>
           </AgreeBox>
         </Contents>
@@ -179,6 +178,11 @@ const AgreeBox = styled.div`
         margin-left: 1rem;
         margin-right: 1rem;
         font-size: 1.82rem;
+      }
+
+      img {
+        width: 120px;
+        height: 80px;
       }
     }
   }
