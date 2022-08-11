@@ -4,7 +4,6 @@ import client from './client';
 export type AddAgreePayload = {
   name: string;
   sign: string;
-  isAgree: boolean;
 };
 
 export type ListAgreesQuery = {

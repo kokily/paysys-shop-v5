@@ -25,7 +25,7 @@ function useReadItem() {
     try {
       await removeItemMutate.mutateAsync(id!);
       toast.success('아이템 삭제');
-      await queryClient.invalidateQueries(['listItems', 'readItem']);
+      await queryClient.clear();
       router.back();
     } catch (err: any) {
       toast.error(err);

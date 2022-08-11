@@ -276,4 +276,5 @@ interface AgreeType {
   name: string;
   sign: string;
   isAgree: boolean;
+  created_at: Date;
 }

@@ -21,7 +21,7 @@ function useReadAgree() {
     try {
       await removeAgreeMutate.mutateAsync(id!);
       toast.success('동의서 삭제');
-      await queryClient.invalidateQueries(['listAgrees', 'readAgree']);
+      await queryClient.clear();
       router.back();
     } catch (err: any) {
       toast.error(err);

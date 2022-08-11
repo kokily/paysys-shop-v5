@@ -31,6 +31,10 @@ function NavList({ isAdmin, onClose, onLogout, visible }: Props) {
 
                 <Split />
 
+                <NavItem href="/agrees/success">동의 목록</NavItem>
+
+                <Split />
+
                 <NavItem href="/result/toptitle">행사별 현황</NavItem>
               </>
             )}
