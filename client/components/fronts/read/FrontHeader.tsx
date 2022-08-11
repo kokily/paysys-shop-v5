@@ -100,6 +100,13 @@ const Table = styled.table`
     background: #364fc7;
     color: white;
   }
+
+  @media print {
+    th,
+    td {
+      color: black;
+    }
+  }
 `;
 
 export default FrontHeader;

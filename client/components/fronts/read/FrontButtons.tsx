@@ -64,6 +64,10 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const ButtonBox = styled.div`

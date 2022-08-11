@@ -26,6 +26,10 @@ const Main = styled.main`
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
+  @media print {
+    margin: 0;
+  }
 `;
 
 export default PageTemplate;

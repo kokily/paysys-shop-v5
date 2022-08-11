@@ -1,19 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 
 function Vacuity() {
   return (
     <tr>
-      <th
-        colSpan={4}
-        style={{
-          background: 'white',
-          color: 'white',
-          borderColor: 'white',
-          height: '25.78px',
-        }}
-      ></th>
+      <Th colSpan={4}></Th>
     </tr>
   );
 }
+
+const Th = styled.th`
+  background: white;
+  color: white;
+  border-color: white;
+  height: 25.78px;
+
+  @media print {
+    height: 24px;
+  }
+`;
 
 export default Vacuity;

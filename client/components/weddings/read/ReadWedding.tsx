@@ -118,6 +118,14 @@ const Container = styled.div`
   margin-bottom: 6rem;
   ${shadow(1)};
   animation: 0.3s ease-out 0s 1 fadeIn;
+
+  @media print {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 0;
+    ${shadow(5)}
+  }
 `;
 
 const Contents = styled.div`

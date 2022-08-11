@@ -106,6 +106,15 @@ const Container = styled.table`
     background: #364fc7;
     color: white;
   }
+
+  @media print {
+    th {
+      color: blue;
+    }
+    td {
+      color: black;
+    }
+  }
 `;
 
 const Td = styled.td<{
