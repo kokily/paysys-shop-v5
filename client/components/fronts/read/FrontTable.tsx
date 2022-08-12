@@ -31,6 +31,7 @@ function FrontTable({ front }: Props) {
                   soldier={item.native === '현역'}
                   reserve={item.native === '예비역'}
                   general={item.native === '일반'}
+                  className={`${item.native}`}
                 >
                   {item.native}
                 </Td>
@@ -64,6 +65,7 @@ function FrontTable({ front }: Props) {
                   soldier={item.native === '현역'}
                   reserve={item.native === '예비역'}
                   general={item.native === '일반'}
+                  className="subTotal"
                 >
                   {(item.price * item.count)
                     .toString()
@@ -141,6 +143,22 @@ const Td = styled.td<{
         background: #fd7e14;
         color: white;
       `}
+  }
+
+  @media print {
+    &.현역 {
+      color: #1098ad;
+    }
+    &.예비역 {
+      color: #74b816;
+    }
+    &.일반 {
+      color: #fd7e14;
+    }
+
+    &.subTotal {
+      color: blue;
+    }
   }
 `;
 

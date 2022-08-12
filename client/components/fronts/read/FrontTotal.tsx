@@ -12,7 +12,7 @@ function FrontTotal({ front }: Props) {
         <>
           <Pane>
             총 금액 :{' '}
-            <span style={{ color: 'gray', fontSize: '1.5rem' }}>
+            <span style={{ color: 'grey', fontSize: '1.5rem' }}>
               {front.total_amount
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
