@@ -157,7 +157,7 @@ const Td = styled.td<{
     }
 
     &.subTotal {
-      color: blue;
+      color: #ff00ea;
     }
   }
 `;
