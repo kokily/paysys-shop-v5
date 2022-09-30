@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AddExpensePayload } from '../../libs/types';
-import { shadow } from '../../styles';
+import { media, shadow } from '../../styles';
 import ExpenseButtons from './ExpenseButtons';
 import ExpenseContents from './ExpenseContents';
 
@@ -31,6 +31,10 @@ const Container = styled.div`
   margin-bottom: 6rem;
   ${shadow(1)}
   animation: 0.2s ease-out 0s 1 fadeIn;
+
+  ${media.medium} {
+    margin-bottom: 15rem;
+  }
 `;
 
 const Title = styled.h2`
