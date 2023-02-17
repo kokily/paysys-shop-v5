@@ -23,47 +23,6 @@ function ReadWeddingSecond({
   reserve,
   prepayment,
 }: Props) {
-  let allCost = 0;
-  let payment = 0;
-  let husbandCost = 0;
-  let brideCost = 0;
-
-  if (wedding && meal && present) {
-    allCost =
-      wedding.cost_husband +
-      wedding.cost_bride +
-      wedding.meal_husband +
-      wedding.meal_bride +
-      wedding.present_husband +
-      wedding.present_bride;
-
-    payment =
-      wedding.cost_husband +
-      wedding.cost_bride +
-      wedding.meal_husband +
-      wedding.meal_bride +
-      wedding.present_husband +
-      wedding.present_bride -
-      wedding.reserve_husband -
-      wedding.reserve_bride -
-      (prepayment ? prepayment.prepayment_husband : 0) -
-      (prepayment ? prepayment.prepayment_bride : 0);
-
-    husbandCost =
-      wedding.cost_husband +
-      wedding.meal_husband +
-      wedding.present_husband -
-      wedding.reserve_husband -
-      (prepayment ? prepayment.prepayment_husband : 0);
-
-    brideCost =
-      wedding.cost_bride +
-      wedding.meal_bride +
-      wedding.present_bride -
-      wedding.reserve_bride -
-      (prepayment ? prepayment.prepayment_bride : 0);
-  }
-
   return (
     <Container>
       <tbody>
@@ -75,19 +34,6 @@ function ReadWeddingSecond({
 
         <Reserve reserve={reserve} />
         <Prepayment prepayment={prepayment} />
-
-        <tr style={{ height: '165px' }}>
-          <td colSpan={4} rowSpan={9} style={{ textAlign: 'center' }}>
-            <h3 style={{ color: 'silver' }}>
-              웨딩 총 비용: {stringAccounting(allCost)}원
-            </h3>
-            <h3 style={{ color: 'blue' }}>
-              결제 총 비용: {stringAccounting(payment)}원
-            </h3>
-            <h3>신랑 총 결제비용: {stringAccounting(husbandCost)}원</h3>
-            <h3>신부 총 결제비용: {stringAccounting(brideCost)}원</h3>
-          </td>
-        </tr>
       </tbody>
     </Container>
   );

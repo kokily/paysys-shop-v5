@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media, shadow } from '../../../styles';
 import ReadWeddingFirst from './ReadWeddingFirst';
+import ReadWeddingResult from './ReadWeddingResult';
 import ReadWeddingSecond from './ReadWeddingSecond';
 import RemoveWeddingModal from './RemoveWeddingModal';
 import WeddingButtons from './WeddingButtons';
@@ -84,6 +85,13 @@ function ReadWedding({
               meal={wedding.meal}
               present={wedding.present}
               reserve={wedding.reserve}
+              prepayment={wedding.prepayment}
+            />
+
+            <ReadWeddingResult
+              wedding={wedding.wedding}
+              meal={wedding.meal}
+              present={wedding.present}
               prepayment={wedding.prepayment}
             />
           </Contents>

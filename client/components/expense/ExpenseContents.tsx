@@ -62,14 +62,6 @@ function ExpenseContents({ expense }: Props) {
         onChange={expense.onChange}
       />
 
-      <Hanbok
-        hanbok_pre_husband={expense.hanbok_pre_husband}
-        hanbok_pre_bride={expense.hanbok_pre_bride}
-        hanbok_post_husband={expense.hanbok_post_husband}
-        hanbok_post_bride={expense.hanbok_post_bride}
-        onChange={expense.onChange}
-      />
-
       <Meal
         meals={expense.meals}
         meals_price={expense.meals_price}
