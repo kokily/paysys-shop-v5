@@ -64,18 +64,6 @@ function Convention({ convention }: Props) {
           원
         </td>
       </tr>
-
-      <tr>
-        <th>폐 백</th>
-        <td>{stringAccounting(convention.ceremony_husband)}원</td>
-        <td>{stringAccounting(convention.ceremony_bride)}원</td>
-        <td className="sub">
-          {stringAccounting(
-            convention.ceremony_husband + convention.ceremony_bride
-          )}
-          원
-        </td>
-      </tr>
     </>
   );
 }

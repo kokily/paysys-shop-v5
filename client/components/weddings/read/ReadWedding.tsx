@@ -84,7 +84,6 @@ function ReadWedding({
               meal={wedding.meal}
               present={wedding.present}
               reserve={wedding.reserve}
-              hanbok={wedding.hanbok}
               prepayment={wedding.prepayment}
             />
           </Contents>
