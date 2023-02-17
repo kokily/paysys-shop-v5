@@ -403,20 +403,20 @@ function useExpense() {
           glove_bride: parseInt(glove_bride),
           bouquet_husband: parseInt(bouquet_husband),
           bouquet_bride: parseInt(bouquet_bride),
-          ceremony_husband: parseInt(ceremony_husband),
-          ceremony_bride: parseInt(ceremony_bride),
-          play_husband: parseInt(play_husband),
-          play_bride: parseInt(play_bride),
-          anthem_husband: parseInt(anthem_husband),
-          anthem_bride: parseInt(anthem_bride),
-          moderator_husband: parseInt(moderator_husband),
-          moderator_bride: parseInt(moderator_bride),
-          officiate_husband: parseInt(officiate_husband),
-          officiate_bride: parseInt(officiate_bride),
-          hanbok_pre_husband: parseInt(hanbok_pre_husband),
-          hanbok_pre_bride: parseInt(hanbok_pre_bride),
-          hanbok_post_husband: parseInt(hanbok_post_husband),
-          hanbok_post_bride: parseInt(hanbok_post_bride),
+          ceremony_husband: 0,
+          ceremony_bride: 0,
+          play_husband: 0,
+          play_bride: 0,
+          anthem_husband: 0,
+          anthem_bride: 0,
+          moderator_husband: 0,
+          moderator_bride: 0,
+          officiate_husband: 0,
+          officiate_bride: 0,
+          hanbok_pre_husband: 0,
+          hanbok_pre_bride: 0,
+          hanbok_post_husband: 0,
+          hanbok_post_bride: 0,
           meals,
           meals_price: parseInt(meals_price),
           meals_num_husband: parseInt(meals_num_husband),
@@ -432,7 +432,7 @@ function useExpense() {
             parseInt(sword_husband) +
             parseInt(glove_husband) +
             parseInt(bouquet_husband) +
-            parseInt(ceremony_husband) +
+            0 +
             parseInt(company_husband) +
             parseInt(rooftop_husband) +
             parseInt(owner_woman_husband) +
@@ -444,18 +444,18 @@ function useExpense() {
             parseInt(wig_husband) +
             parseInt(video_husband) +
             parseInt(etc_husband) +
-            parseInt(play_husband) +
-            parseInt(anthem_husband) +
-            parseInt(moderator_husband) +
-            parseInt(officiate_husband) +
-            parseInt(hanbok_pre_husband) +
-            parseInt(hanbok_post_husband),
+            0 +
+            0 +
+            0 +
+            0 +
+            0 +
+            0,
           cost_bride:
             parseInt(rental_bride) +
             parseInt(sword_bride) +
             parseInt(glove_bride) +
             parseInt(bouquet_bride) +
-            parseInt(ceremony_bride) +
+            0 +
             parseInt(company_bride) +
             parseInt(rooftop_bride) +
             parseInt(owner_woman_bride) +
@@ -467,12 +467,12 @@ function useExpense() {
             parseInt(wig_bride) +
             parseInt(video_bride) +
             parseInt(etc_bride) +
-            parseInt(play_bride) +
-            parseInt(anthem_bride) +
-            parseInt(moderator_bride) +
-            parseInt(officiate_bride) +
-            parseInt(hanbok_pre_bride) +
-            parseInt(hanbok_post_bride),
+            0 +
+            0 +
+            0 +
+            0 +
+            0 +
+            0,
           meal_husband,
           meal_bride,
           present_husband,
@@ -519,20 +519,20 @@ function useExpense() {
           glove_bride: parseInt(glove_bride),
           bouquet_husband: parseInt(bouquet_husband),
           bouquet_bride: parseInt(bouquet_bride),
-          ceremony_husband: parseInt(ceremony_husband),
-          ceremony_bride: parseInt(ceremony_bride),
-          play_husband: parseInt(play_husband),
-          play_bride: parseInt(play_bride),
-          anthem_husband: parseInt(anthem_husband),
-          anthem_bride: parseInt(anthem_bride),
-          moderator_husband: parseInt(moderator_husband),
-          moderator_bride: parseInt(moderator_bride),
-          officiate_husband: parseInt(officiate_husband),
-          officiate_bride: parseInt(officiate_bride),
-          hanbok_pre_husband: parseInt(hanbok_pre_husband),
-          hanbok_pre_bride: parseInt(hanbok_pre_bride),
-          hanbok_post_husband: parseInt(hanbok_post_husband),
-          hanbok_post_bride: parseInt(hanbok_post_bride),
+          ceremony_husband: 0,
+          ceremony_bride: 0,
+          play_husband: 0,
+          play_bride: 0,
+          anthem_husband: 0,
+          anthem_bride: 0,
+          moderator_husband: 0,
+          moderator_bride: 0,
+          officiate_husband: 0,
+          officiate_bride: 0,
+          hanbok_pre_husband: 0,
+          hanbok_pre_bride: 0,
+          hanbok_post_husband: 0,
+          hanbok_post_bride: 0,
           meals,
           meals_price: parseInt(meals_price),
           meals_num_husband: parseInt(meals_num_husband),
@@ -548,7 +548,7 @@ function useExpense() {
             parseInt(sword_husband) +
             parseInt(glove_husband) +
             parseInt(bouquet_husband) +
-            parseInt(ceremony_husband) +
+            0 +
             parseInt(company_husband) +
             parseInt(rooftop_husband) +
             parseInt(owner_woman_husband) +
@@ -560,18 +560,18 @@ function useExpense() {
             parseInt(wig_husband) +
             parseInt(video_husband) +
             parseInt(etc_husband) +
-            parseInt(play_husband) +
-            parseInt(anthem_husband) +
-            parseInt(moderator_husband) +
-            parseInt(officiate_husband) +
-            parseInt(hanbok_pre_husband) +
-            parseInt(hanbok_post_husband),
+            0 +
+            0 +
+            0 +
+            0 +
+            0 +
+            0,
           cost_bride:
             parseInt(rental_bride) +
             parseInt(sword_bride) +
             parseInt(glove_bride) +
             parseInt(bouquet_bride) +
-            parseInt(ceremony_bride) +
+            0 +
             parseInt(company_bride) +
             parseInt(rooftop_bride) +
             parseInt(owner_woman_bride) +
@@ -583,12 +583,12 @@ function useExpense() {
             parseInt(wig_bride) +
             parseInt(video_bride) +
             parseInt(etc_bride) +
-            parseInt(play_bride) +
-            parseInt(anthem_bride) +
-            parseInt(moderator_bride) +
-            parseInt(officiate_bride) +
-            parseInt(hanbok_pre_bride) +
-            parseInt(hanbok_post_bride),
+            0 +
+            0 +
+            0 +
+            0 +
+            0 +
+            0,
           meal_husband,
           meal_bride,
           present_husband,

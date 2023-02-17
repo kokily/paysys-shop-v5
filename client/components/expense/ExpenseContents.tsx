@@ -33,8 +33,6 @@ function ExpenseContents({ expense }: Props) {
         glove_bride={expense.glove_bride}
         bouquet_husband={expense.bouquet_husband}
         bouquet_bride={expense.bouquet_bride}
-        ceremony_husband={expense.ceremony_husband}
-        ceremony_bride={expense.ceremony_bride}
         onChange={expense.onChange}
       />
 
@@ -61,18 +59,6 @@ function ExpenseContents({ expense }: Props) {
         video_bride={expense.video_bride}
         etc_husband={expense.etc_husband}
         etc_bride={expense.etc_bride}
-        onChange={expense.onChange}
-      />
-
-      <Event
-        play_husband={expense.play_husband}
-        play_bride={expense.play_bride}
-        anthem_husband={expense.anthem_husband}
-        anthem_bride={expense.anthem_bride}
-        moderator_husband={expense.moderator_husband}
-        moderator_bride={expense.moderator_bride}
-        officiate_husband={expense.officiate_husband}
-        officiate_bride={expense.officiate_bride}
         onChange={expense.onChange}
       />
 

@@ -3,24 +3,14 @@ import styled from 'styled-components';
 import { stringAccounting } from '../../../libs/utils';
 import Company from './common/Company';
 import Convention from './common/Convention';
-import Event from './common/Event';
-import Hanbok from './common/Hanbok';
 
 interface Props {
   wedding: WeddingType;
   convention: ConventionType;
   company: CompanyType;
-  event: EventType;
-  hanbok: HanbokType;
 }
 
-function ReadWeddingFirst({
-  wedding,
-  convention,
-  company,
-  event,
-  hanbok,
-}: Props) {
+function ReadWeddingFirst({ wedding, convention, company }: Props) {
   return (
     <Container>
       <tbody>
@@ -30,8 +20,6 @@ function ReadWeddingFirst({
 
         <Convention convention={convention} />
         <Company company={company} />
-        <Event event={event} />
-        <Hanbok hanbok={hanbok} />
 
         <tr>
           <th style={{ background: 'white', color: '#d941c5' }}>총 예식비용</th>

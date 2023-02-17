@@ -78,8 +78,6 @@ function ReadWedding({
               wedding={wedding.wedding}
               convention={wedding.convention}
               company={wedding.company}
-              event={wedding.event}
-              hanbok={wedding.hanbok}
             />
             <ReadWeddingSecond
               wedding={wedding.wedding}

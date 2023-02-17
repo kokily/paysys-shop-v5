@@ -4,10 +4,9 @@ import Vacuity from './Vacuity';
 
 interface Props {
   reserve: ReserveType;
-  hanbok: HanbokType;
 }
 
-function Reserve({ reserve, hanbok }: Props) {
+function Reserve({ reserve }: Props) {
   return (
     <>
       <tr>
@@ -59,34 +58,6 @@ function Reserve({ reserve, hanbok }: Props) {
       </tr>
 
       <Vacuity />
-
-      {hanbok.hanbok_pre_husband !== 0 || hanbok.hanbok_pre_bride !== 0 ? (
-        <tr>
-          <th>한복(선불)</th>
-          <td style={{ color: 'red' }}>
-            -{stringAccounting(hanbok.hanbok_pre_husband)}원
-          </td>
-          <td style={{ color: 'red' }}>
-            -{stringAccounting(hanbok.hanbok_pre_bride)}원
-          </td>
-          <td className="sub" style={{ color: 'red' }}>
-            -
-            {stringAccounting(
-              hanbok.hanbok_pre_husband + hanbok.hanbok_pre_bride
-            )}
-            원
-          </td>
-        </tr>
-      ) : (
-        <tr>
-          <th>한복(선불)</th>
-          <td style={{ color: 'red' }}>-0원</td>
-          <td style={{ color: 'red' }}>-0원</td>
-          <td className="sub" style={{ color: 'red' }}>
-            -0원
-          </td>
-        </tr>
-      )}
     </>
   );
 }

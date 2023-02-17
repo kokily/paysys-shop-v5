@@ -13,7 +13,6 @@ interface Props {
   meal: MealType;
   present: PresentType;
   reserve: ReserveType;
-  hanbok: HanbokType;
   prepayment: PrepaymentType;
 }
 
@@ -22,7 +21,6 @@ function ReadWeddingSecond({
   meal,
   present,
   reserve,
-  hanbok,
   prepayment,
 }: Props) {
   let allCost = 0;
@@ -30,7 +28,7 @@ function ReadWeddingSecond({
   let husbandCost = 0;
   let brideCost = 0;
 
-  if (wedding && meal && present && hanbok) {
+  if (wedding && meal && present) {
     allCost =
       wedding.cost_husband +
       wedding.cost_bride +
@@ -48,8 +46,6 @@ function ReadWeddingSecond({
       wedding.present_bride -
       wedding.reserve_husband -
       wedding.reserve_bride -
-      hanbok.hanbok_pre_husband -
-      hanbok.hanbok_pre_bride -
       (prepayment ? prepayment.prepayment_husband : 0) -
       (prepayment ? prepayment.prepayment_bride : 0);
 
@@ -58,7 +54,6 @@ function ReadWeddingSecond({
       wedding.meal_husband +
       wedding.present_husband -
       wedding.reserve_husband -
-      hanbok.hanbok_pre_husband -
       (prepayment ? prepayment.prepayment_husband : 0);
 
     brideCost =
@@ -66,7 +61,6 @@ function ReadWeddingSecond({
       wedding.meal_bride +
       wedding.present_bride -
       wedding.reserve_bride -
-      hanbok.hanbok_pre_bride -
       (prepayment ? prepayment.prepayment_bride : 0);
   }
 
@@ -79,7 +73,7 @@ function ReadWeddingSecond({
         <Present present={present} />
         <Vacuity />
 
-        <Reserve reserve={reserve} hanbok={hanbok} />
+        <Reserve reserve={reserve} />
         <Prepayment prepayment={prepayment} />
 
         <tr style={{ height: '165px' }}>

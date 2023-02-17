@@ -11,8 +11,6 @@ export type ExpenseConventionType = {
   glove_bride: string;
   bouquet_husband: string;
   bouquet_bride: string;
-  ceremony_husband: string;
-  ceremony_bride: string;
 };
 
 interface Props extends ExpenseConventionType {
@@ -28,8 +26,6 @@ function Convention({
   glove_bride,
   bouquet_husband,
   bouquet_bride,
-  ceremony_husband,
-  ceremony_bride,
   onChange,
 }: Props) {
   return (
@@ -82,15 +78,6 @@ function Convention({
             husband_value={bouquet_husband}
             bride_name="bouquet_bride"
             bride_value={bouquet_bride}
-            onChange={onChange}
-          />
-
-          <TableInput
-            title="폐백음식"
-            husband_name="ceremony_husband"
-            husband_value={ceremony_husband}
-            bride_name="ceremony_bride"
-            bride_value={ceremony_bride}
             onChange={onChange}
           />
         </tbody>
