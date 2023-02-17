@@ -87,7 +87,9 @@ function ReadWedding({
               reserve={wedding.reserve}
               prepayment={wedding.prepayment}
             />
+          </Contents>
 
+          <Contents>
             <ReadWeddingResult
               wedding={wedding.wedding}
               meal={wedding.meal}
