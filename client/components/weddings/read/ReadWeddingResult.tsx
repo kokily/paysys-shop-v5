@@ -76,7 +76,9 @@ export default ReadWeddingResult;
 
 const Container = styled.table`
   font-size: 0.95rem;
+  width: 100%;
   height: 100%;
+  min-width: 420px;
 
   tr {
     &:hover {
