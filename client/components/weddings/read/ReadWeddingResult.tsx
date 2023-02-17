@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { stringAccounting } from '../../../libs/utils';
 import { media } from '../../../styles';
 
 interface Props {

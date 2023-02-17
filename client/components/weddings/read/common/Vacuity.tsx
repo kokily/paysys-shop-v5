@@ -13,7 +13,7 @@ const Th = styled.th`
   background: white;
   color: white;
   border-color: white;
-  height: 25.78px;
+  height: 27.78px;
 
   @media print {
     height: 24px;
