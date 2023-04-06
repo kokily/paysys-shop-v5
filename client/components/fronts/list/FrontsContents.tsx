@@ -24,7 +24,7 @@ function FrontsContents({
       <thead>
         <tr>
           <Th>날짜</Th>
-          {!isMobile && <Th>출신</Th>}
+          {!isMobile && <Th>구분</Th>}
           <Th>행사명</Th>
           <Th>장소</Th>
           <Th>작성자</Th>
