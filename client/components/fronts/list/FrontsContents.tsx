@@ -1,6 +1,7 @@
 import React from 'react';
 import useLocalStorage from 'use-local-storage';
 import styled from 'styled-components';
+import useMobile from '../../../libs/hooks/common/useMobile';
 
 interface Props {
   bills: BillType[];
@@ -16,12 +17,14 @@ function FrontsContents({
   onDetailBill,
 }: Props) {
   const [, setScrollY] = useLocalStorage('bills_list', 0);
+  const isMobile = useMobile();
 
   return (
     <Container>
       <thead>
         <tr>
           <Th>날짜</Th>
+          {!isMobile && <Th>출신</Th>}
           <Th>행사명</Th>
           <Th>장소</Th>
           <Th>작성자</Th>
@@ -37,6 +40,7 @@ function FrontsContents({
             {bills.map((bill) => (
               <tr key={bill.id}>
                 <Td>{new Date(bill.created_at).toLocaleDateString()}</Td>
+                {!isMobile && <Td>{bill.items[0].native}</Td>}
                 <Td>
                   <strong
                     onClick={() => {
