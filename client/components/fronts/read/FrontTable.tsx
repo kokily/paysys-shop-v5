@@ -47,7 +47,7 @@ function FrontTable({ front }: Props) {
                   reserve={item.native === '예비역'}
                   general={item.native === '일반'}
                 >
-                  <span style={{ color: '#868e96' }}>
+                  <span>
                     {item.price
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
